@@ -64,8 +64,8 @@ ENV MCRROOT=/usr/local/MATLAB/MATLAB_Runtime/${MCR_RELEASE}
 ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$MCRROOT/runtime/glnxa64:$MCRROOT/bin/glnxa64:$MCRROOT/sys/os/glnxa64:$MCRROOT/extern/bin/glnxa64
 
 
-# Expose Streamlit’s default port
-EXPOSE 8501
+# Expose the port (Render will inject $PORT)
+EXPOSE 8080
 
 # Launch Streamlit
-CMD ["streamlit", "run", "/streamlit_app.py", "--server.address=0.0.0.0", "--server.port=8501", "--server.fileWatcherType=poll"]
+CMD ["streamlit", "run", "/streamlit_app.py", "--server.address=0.0.0.0", "--server.port=8080", "--server.fileWatcherType=poll"]
