@@ -8,8 +8,7 @@ RUN mkdir -p $EXTRACTEDDIR
 
 # Write the installer file
 RUN touch $EXTRACTEDDIR/installInputs.txt
-RUN printf "destinationFolder=/opt/matlabruntime\n" > $EXTRACTEDDIR/installInputs.txt
-RUN printf "agreeToLicense=yes\n" > $EXTRACTEDDIR/installInputs.txt
+RUN printf "destinationFolder=/opt/matlabruntime\nagreeToLicense=yes\n" > $EXTRACTEDDIR/installInputs.txt
 RUN printf "product.MATLAB Base Runtime\n" >> $EXTRACTEDDIR/installInputs.txt
 RUN printf "product.MATLAB Production Server Runtime Addon\n" >> $EXTRACTEDDIR/installInputs.txt
 
