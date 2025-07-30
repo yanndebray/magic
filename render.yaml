@@ -1,0 +1,23 @@
+# This is a basic example Blueprint 
+# for a Streamlit web service and
+# the MATLAB microservice it connects to.
+
+# matlab should be "pserv", but not available on free
+services:
+  - type: web 
+    name: matlab
+    env: docker
+    dockerfilePath: ./matlabBackEndService/Dockerfile
+    plan: free
+    envVars:
+      - key: PORT
+        value: 9910
+
+  - type: web
+    name: streamlit
+    env: docker
+    dockerfilePath: ./streamlitFrontEndService/Dockerfile
+    plan: free
+    envVars:
+      - key: PORT
+        value: 8501
