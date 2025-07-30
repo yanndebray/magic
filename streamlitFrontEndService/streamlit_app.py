@@ -3,7 +3,7 @@ import numpy as np
 import requests
 
 # Replace 'service1' with the name defined in render.yaml
-MATLAB_SERVICE_URL = "https://matlab-uxuj.onrender.com"
+MATLAB_SERVICE_URL = "https://matlab-0j1h.onrender.com"
 
 st.title("Magic Square Generator")
 size = st.slider("Select size of magic square:", 1, 10, 3)
